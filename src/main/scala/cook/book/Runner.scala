@@ -10,4 +10,11 @@ object Runner extends App {
   println("dog say: ".bark)
   println("duck say: ".quack)
   println("cat say: ".mew)
+
+  val person = new Person("Adam", "Mayer")
+  person.firstName
+  person.lastName
+
+  new Person("")
+
 }
