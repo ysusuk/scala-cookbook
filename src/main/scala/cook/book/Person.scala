@@ -3,7 +3,7 @@ package cook.book
 /**
  * @author Yura.Susuk yurasusuk@gmail.com.
  */
-class Person(val firstName: String, val lastName: String) {
+class Person(var firstName: String, var lastName: String) {
 
   println("the constructor begins")
 
@@ -26,3 +26,4 @@ class Person(val firstName: String, val lastName: String) {
     this("", firstName)
   }
 }
+
