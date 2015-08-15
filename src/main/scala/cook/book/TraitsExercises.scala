@@ -47,7 +47,9 @@ object TraitsExercises extends App {
 
   // log method is invoked starting from the last trait defined
   val acct1 = new SavingsAccount with ConsoleLogger with
-    TimestampLogger with ShortLogger
+    TimestampLogger with ShortLogger {
+    override val maxLength = 20;
+  }
   acct1.withdraw(1)
 
   val acct2 = new SavingsAccount with ConsoleLogger with
