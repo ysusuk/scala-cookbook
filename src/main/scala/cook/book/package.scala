@@ -30,13 +30,11 @@ package object book {
   }
 
 
-  def factorial(f: Int): Int = {
+  def factorial(f: Int): Int =
     f match {
       case edgeCase if edgeCase < 1 => 0
       case _ => (1 to f).reduceLeft((a, b) => a * b)
     }
-  }
-
 
   def swap[T1, T2](pair: (T1, T2)): (T2, T1) = (pair._2, pair._1)
 
@@ -44,6 +42,8 @@ package object book {
     case Array(x :: y :: ys) => y :: x :: ys
     // case Array(x, y, _*) => Array(y, x, _)
   }
+
+
 
   implicit class StringExt1(val s: String) {
     def mew = "mew - mew!"
