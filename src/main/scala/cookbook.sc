@@ -23,3 +23,7 @@ a ~= (b)
 def blah(say: String = "quack") = println(say)
 
 blah()
+val (q, r) = BigInt(10) /% 3
+
+sealed trait Blah
+

@@ -10,7 +10,7 @@ class ValuesSpec extends Specification {
       This is a specification to check the 'values func'
 
       The 'values func' should
-        start with (-5, 25)                            $e1
+        blah                           $e1
         contain (0, 0) pair                            $e2
         contain 10 pairs                               $e3
         end with (5, 25)                               $e4
@@ -22,7 +22,7 @@ class ValuesSpec extends Specification {
 
   def e2 = pairs must contain((0, 0))
 
-  def e3 = pairs must have size 11
+  def e3 = pairs must have size(11)
 
   def e4 = pairs.last must_==(5, 25)
 
