@@ -19,7 +19,7 @@ package object book {
   // }
 
   def max[T](arr: Array[T])(implicit ord: Ordering[T]): Option[T] = {
-    Try(arr.reduceLeft((a, b) => if (ord.compare(a, b) >= 0) a else b)).toOption
+    Try(arr.reduceLeft((a, b) => if (ord gt (a, b)) a else b)).toOption
 
     //    arr match {
     //      case Array() => None
@@ -30,7 +30,12 @@ package object book {
   }
 
   def maxWithComparable[T <: Comparable[T]](arr: Array[T]): Option[T] = {
-    Try(arr.reduceLeft((a, b) => if (a.compareTo(b) >= 0) a else b)).toOption
+    Try(arr.reduceLeft((a, b) => if ((a compareTo b) >= 0) a else b)).toOption
+  }
+
+  // <% means that T can be converted to Ordered[T] thgough implicit conversion
+  def maxWithOrdered[T <% Ordered[T]](arr: Array[T]): Option[T] = {
+    Try(arr.reduceLeft((a, b) => if (a > b) a else b)).toOption
   }
 
 
