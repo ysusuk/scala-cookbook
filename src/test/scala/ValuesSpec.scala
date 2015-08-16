@@ -10,7 +10,7 @@ class ValuesSpec extends Specification {
       This is a specification to check the 'values func'
 
       The 'values func' should
-        blah                           $e1
+        start with (-5, 25)                            $e1
         contain (0, 0) pair                            $e2
         contain 10 pairs                               $e3
         end with (5, 25)                               $e4

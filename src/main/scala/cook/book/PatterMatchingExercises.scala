@@ -3,7 +3,7 @@ package cook.book
 /**
  * @author Yura.Susuk yurasusuk@gmail.com.
  */
-abstract class Item
+sealed abstract class Item
 
 case class Article(description: String, price: Double) extends Item
 
@@ -15,7 +15,7 @@ object Item {
 
   def price(it: Item): Double = it match {
     case Article(_, p) => p
-    case Bundle(_, disc, its@_*) => its.map(price _).sum - disc
+    case Bundle(_, disc, its@_*) => its.map(price).sum - disc
     case Multiple(quantity, item) => quantity * price(item)
   }
 }
