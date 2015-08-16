@@ -29,6 +29,10 @@ package object book {
     //    }
   }
 
+  def maxWithComparable[T <: Comparable[T]](arr: Array[T]): Option[T] = {
+    Try(arr.reduceLeft((a, b) => if (a.compareTo(b) >= 0) a else b)).toOption
+  }
+
 
   def factorial(f: Int): Int =
     f match {
@@ -42,7 +46,6 @@ package object book {
     case Array(x :: y :: ys) => y :: x :: ys
     // case Array(x, y, _*) => Array(y, x, _)
   }
-
 
 
   implicit class StringExt1(val s: String) {
