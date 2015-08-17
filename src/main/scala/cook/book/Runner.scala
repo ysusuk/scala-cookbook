@@ -17,4 +17,5 @@ object Runner extends App {
 
   new Person("")
 
+  println(3!)
 }

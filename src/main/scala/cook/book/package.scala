@@ -57,4 +57,8 @@ package object book {
     def mew = "mew - mew!"
   }
 
+  implicit class IntExt(val i: Int) {
+    def ! = factorial(i)
+  }
+
 }
