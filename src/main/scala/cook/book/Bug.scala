@@ -9,14 +9,14 @@ class Bug {
   case object Right extends Direction
 
   var position: Int = 0
-  var direction: Direction = Right
+  private[this] var direction: Direction = Right
 
-  def moveLeft(steps: Int): Int = {
+  private def moveLeft(steps: Int): Int = {
     position -= steps
     position
   }
 
-  def moveRight(steps: Int): Int = {
+  private def moveRight(steps: Int): Int = {
     position += steps
     position
   }
@@ -33,15 +33,11 @@ class Bug {
     this
   }
 
-  def and: this.type = {
-    this
-  }
+  def and: this.type = this
 
-  def then: this.type = {
-    this
-  }
+  def then(): this.type = this
 
-  def turn: this.type = {
+  def turn(): this.type = {
     direction match {
       case Left => direction = Right
       case Right => direction = Left

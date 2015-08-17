@@ -25,7 +25,7 @@ class BugSpec extends Specification {
 
   def e2 = {
     val bug = new Bug
-    // bug.move(4) and turn and then move(4)
+    bug move 4 and // turn.and().turn().and().then().move(4)
 
     bug.position must_== 0
   }
